@@ -24,29 +24,41 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             color: var(--text-color);
             line-height: 1.6;
             background-color: #f9f9f9;
             overflow-x: hidden;
         }
 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
         header {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             padding: 20px 0;
+            position: relative;
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
         }
 
         .logo {
             font-size: 24px;
             font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
         }
 
         nav ul {
@@ -71,68 +83,511 @@
             background-color: rgba(255, 255, 255, 0.2);
         }
 
-        section {
-            padding: 60px 20px;
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            padding: 100px 0;
+            background-color: var(--dark-color);
+            color: white;
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-image {
+            flex: 1;
             text-align: center;
+        }
+
+        .hero-image img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 5px solid var(--light-color);
+            object-fit: cover;
+            box-shadow: var(--shadow);
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: var(--light-color);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
         }
 
         .section-title h2 {
             font-size: 36px;
-            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
         }
 
-        .about-content, .timeline, .projects {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: left;
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .about-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .skills {
+            margin-top: 30px;
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 5px;
+        }
+
+        /* Education & Experience */
+        .education-experience {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .timeline-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
         }
 
         .timeline {
-            border-left: 2px solid var(--primary-color);
-            padding-left: 20px;
-            margin: 20px 0;
+            flex: 1;
+            padding: 0 20px;
         }
 
         .timeline-item {
-            margin-bottom: 20px;
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 40px;
+            border-left: 2px solid var(--primary-color);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            left: -8px;
+            top: 0;
         }
 
         .timeline-item .date {
             color: var(--primary-color);
-            font-weight: bold;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 100px 0;
+            background-color: var(--light-color);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
         }
 
         .project-card {
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            margin: 10px;
-            padding: 15px;
             background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
             box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .project-links {
+            display: flex;
+        }
+
+        .project-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 15px;
+            margin-right: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .project-links a:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .project-links a i {
+            margin-right: 5px;
+        }
+
+        /* Certificates Section */
+        .certificates {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .certificate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .certificate-card {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .certificate-card i {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .certificate-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .certificate-card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--light-color);
+        }
+
+        .contact-content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .contact-info {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        .contact-info p {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info p i {
+            margin-right: 15px;
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-links {
+            margin-top: 30px;
         }
 
         .social-links a {
-            margin: 0 10px;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-size: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: var(--transition);
         }
 
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+        }
+
+        .contact-form button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .contact-form button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Footer */
         footer {
             background-color: var(--dark-color);
             color: white;
-            padding: 20px 0;
+            padding: 30px 0;
             text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-text {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+
+            .timeline-container {
+                flex-direction: column;
+            }
+
+            .timeline {
+                margin-bottom: 50px;
+            }
+
+            .contact-content {
+                flex-direction: column;
+            }
+
+            .contact-info {
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .project-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            .certificate-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+
+            .nav-container {
+                flex-direction: column;
+            }
+
+            .logo {
+                margin-bottom: 20px;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certificate-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="nav-container">
+        <div class="container nav-container">
             <div class="logo">Ziad<span>M</span></div>
             <nav>
                 <ul>
+                    <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#experience">Experience</a></li>
@@ -144,29 +599,66 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>Hello, I'm Ziad Mohamed</h1>
+            <p>A passionate mobile developer proficient in Flutter and Android development.</p>
+            <a href="#projects" class="hero-btn">View My Projects</a>
+        </div>
+        <div class="container hero-image">
+            <img src="https://via.placeholder.com/300" alt="Ziad Mohamed">
+        </div>
+    </section>
+
     <!-- About Section -->
-    <section id="about">
-        <div class="section-title">
+    <section id="about" class="about">
+        <div class="container section-title">
             <h2>About Me</h2>
         </div>
-        <div class="about-content">
-            <p>I am a computer science graduate with over one year of experience as a native android mobile developer. Currently, I am focused on Flutter app development, leveraging my expertise to create cross-platform mobile applications. My background in android development provides a strong foundation in mobile technologies, and my transition to flutter reflects my commitment to staying at the forefront of mobile app innovation.</p>
-            <p><strong>Nationality:</strong> Egyptian</p>
-            <p><strong>Date of Birth:</strong> 26/1/1999</p>
-            <p><strong>Phone:</strong> +02 01024375442</p>
-            <p><strong>Email:</strong> <a href="mailto:Ziadm707.zm@gmail.com">Ziadm707.zm@gmail.com</a></p>
-            <p><strong>GitHub:</strong> <a href="https://github.com/ziadmohamed707" target="_blank">Github Profile</a></p>
-            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ziad-mohamed-7a5b841a1/" target="_blank">LinkedIn Profile</a></p>
-            <p><strong>Address:</strong> 54 El-Shekh Rehan St – Abdeen – Cairo - Egypt</p>
+        <div class="container about-content">
+            <div class="about-text">
+                <p>I am a computer science graduate with over one year of experience as a native android mobile developer. Currently, I am focused on Flutter app development, leveraging my expertise to create cross-platform mobile applications. My background in android development provides a strong foundation in mobile technologies, and my transition to flutter reflects my commitment to staying at the forefront of mobile app innovation.</p>
+                <div class="skills">
+                    <h4>Skills</h4>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Flutter</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Android Development</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Dart</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Education Section -->
-    <section id="education">
-        <div class="section-title">
+    <section id="education" class="education-experience">
+        <div class="container section-title">
             <h2>Education</h2>
         </div>
-        <div class="about-content">
+        <div class="container timeline-container">
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="date">2018 - 2022</div>
@@ -179,11 +671,11 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience">
-        <div class="section-title">
+    <section id="experience" class="education-experience">
+        <div class="container section-title">
             <h2>Work Experience</h2>
         </div>
-        <div class="about-content">
+        <div class="container timeline-container">
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="date">February 2024 - Current</div>
@@ -205,75 +697,112 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
-        <div class="section-title">
+    <section id="projects" class="projects">
+        <div class="container section-title">
             <h2>Projects</h2>
         </div>
-        <div class="about-content">
+        <div class="container project-grid">
             <div class="project-card">
-                <h3>Graduation Project: Covid-19 Detection</h3>
-                <p>Description: An innovative mobile application developed using Flutter aimed at enhancing respiratory health diagnostics.</p>
-                <p>GitHub: <a href="https://github.com/your-repo/Covid19Detection-App" target="_blank">Covid19Detection-App</a></p>
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/350" alt="Covid-19 Detection">
+                </div>
+                <div class="project-info">
+                    <h3>Covid-19 Detection</h3>
+                    <p>A mobile application for enhancing respiratory health diagnostics using Flutter.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/your-repo/Covid19Detection-App" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
             </div>
             <div class="project-card">
-                <h3>Erkenly Android Mobile App</h3>
-                <p>Description: A Parking Tracker application designed to help users locate available parking spaces in real-time.</p>
-                <p>GitHub: <a href="https://github.com/your-repo/Erkenly" target="_blank">Erkenly</a></p>
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/350" alt="Erkenly">
+                </div>
+                <div class="project-info">
+                    <h3>Erkenly</h3>
+                    <p>A Parking Tracker application that helps find available parking spots in real-time.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/your-repo/Erkenly" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
             </div>
             <div class="project-card">
-                <h3>Scholar Chat</h3>
-                <p>Description: A chat application designed for academic communication between students and teachers.</p>
-                <p>GitHub: <a href="https://github.com/your-repo/ScholarChat" target="_blank">Scholar Chat</a></p>
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/350" alt="Scholar Chat">
+                </div>
+                <div class="project-info">
+                    <h3>Scholar Chat</h3>
+                    <p>A chat application designed for academic communication between students and teachers.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/your-repo/ScholarChat" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Certificates Section -->
-    <section id="certificates">
-        <div class="section-title">
+    <section id="certificates" class="certificates">
+        <div class="container section-title">
             <h2>Certificates</h2>
         </div>
-        <div class="about-content">
-            <ul>
-                <li>Flutter & Dart Development Course</li>
-                <li>Microsoft Software Development Fundamentals - Microsoft [04/2020]</li>
-                <li>Android Diploma Student at AMIT Learning - Amit [02/2020]</li>
-                <li>Introduction to Programming Using Java - Microsoft [04/2019]</li>
-                <li>Microsoft Office PowerPoint - Microsoft [12/2018]</li>
-            </ul>
+        <div class="container certificate-grid">
+            <div class="certificate-card">
+                <i class="fas fa-certificate"></i>
+                <h3>Flutter & Dart Development Course</h3>
+                <p>Completed various modules covering Dart, Widgets, and Firebase.</p>
+            </div>
+            <div class="certificate-card">
+                <i class="fas fa-certificate"></i>
+                <h3>Microsoft Software Development Fundamentals</h3>
+                <p>Microsoft [04/2020]</p>
+            </div>
+            <div class="certificate-card">
+                <i class="fas fa-certificate"></i>
+                <h3>Android Diploma Student at AMIT Learning</h3>
+                <p>Amit [02/2020]</p>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <div class="section-title">
+    <section id="contact" class="contact">
+        <div class="container section-title">
             <h2>Contact Me</h2>
         </div>
-        <div class="about-content">
-            <form>
-                <div>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" required>
+        <div class="container contact-content">
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i>Email: <a href="mailto:Ziadm707.zm@gmail.com">Ziadm707.zm@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i>Phone: +02 01024375442</p>
+                <div class="social-links">
+                    <a href="https://github.com/ziadmohamed707" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ziad-mohamed-7a5b841a1/" target="_blank"><i class="fab fa-linkedin"></i></a>
                 </div>
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div>
-                    <label for="message">Message:</label>
-                    <textarea id="message" rows="4" required></textarea>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2023 Ziad Mohamed. All Rights Reserved.</p>
-        <div class="social-links">
-            <a href="https://github.com/ziadmohamed707" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/ziad-mohamed-7a5b841a1/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <div class="container">
+            <p>&copy; 2023 Ziad Mohamed. All Rights Reserved.</p>
         </div>
     </footer>
 </body>
