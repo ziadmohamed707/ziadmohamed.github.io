@@ -37,6 +37,59 @@ Higher Future Institute for Specialized Technological Studies
 - Implemented responsive UI designs, integrated third-party APIs, and ensured optimal app performance.
 - Leveraged advanced state management solutions to create efficient, maintainable, and scalable applications.
 
+## Key Strengths & Proficiencies
+
+*   **Cross-Platform Mobile Development:** Building high-performance, visually appealing applications for Android and iOS using Flutter and Dart.
+*   **Native Android Expertise:** Strong foundation in native Android development with Java and Kotlin, ensuring optimal device-specific performance and user experience.
+*   **Full Lifecycle App Development:** Experienced in all phases of mobile app development, from initial concept and requirement gathering through UI/UX design, development, testing, deployment, and post-launch maintenance.
+*   **Backend Integration & BaaS:** Skilled in integrating mobile applications with backend services, with strong proficiency in Firebase (Authentication, Firestore, Realtime Database, Cloud Functions).
+*   **Advanced State Management:** Expertise in implementing robust and scalable state management solutions in Flutter, primarily using BLoC and Cubit.
+*   **API Development & Consumption:** Proficient in designing, developing, and consuming RESTful APIs for seamless data exchange and third-party service integration.
+*   **Device Connectivity:** Proficient in integrating Bluetooth (Classic/BLE) for device-to-device communication and data exchange.
+*   **Clean Code & Architectural Patterns:** Committed to writing clean, well-documented, and maintainable code by applying established software design patterns (MVVM, MVC, MVP) and best practices.
+*   **Version Control & Collaboration:** Proficient in using Git and GitHub for efficient version control, branching strategies, and collaborative development in team environments.
+*   **Agile Methodologies:** Experienced in working within Agile (Scrum) development environments, contributing to iterative development cycles and continuous improvement.
+
+## Technologies & Tools
+
+Here's a breakdown of the primary technologies and tools I work with:
+
+*   **Mobile Development:**
+    *   **Cross-Platform:** Flutter, Dart
+    *   **Native:** Android (Java, Kotlin), Android SDK
+*   **Backend & Cloud Services:**
+    *   Firebase (Authentication, Firestore, Realtime Database, Cloud Functions, Firebase Hosting)
+*   **Programming Languages:**
+    *   Dart
+    *   Java
+    *   Kotlin
+    *   Python (for scripting, data analysis e.g., Pandas)
+    *   MATLAB
+*   **Databases:**
+    *   SQLite
+    *   MySQL
+    *   Firebase Firestore / Realtime Database (as BaaS)
+*   **Web Technologies (Basic Proficiency):**
+    *   HTML5
+    *   CSS
+*   **Version Control:**
+    *   Git
+    *   GitHub
+*   **Connectivity:**
+    *   Bluetooth (Classic, BLE)
+    *   *(Consider adding NFC, Wi-Fi Direct if applicable)*
+*   **State Management (Flutter):**
+    *   BLoC
+    *   Cubit
+*   **Architectural & Design Patterns:**
+    *   MVVM (Model-View-ViewModel), MVC (Model-View-Controller), MVP (Model-View-Presenter)
+    *   Clean Architecture principles
+*   **Development Methodologies:**
+    *   Agile (Scrum)
+*   **Development Environments & Tools:**
+    *   Android Studio
+    *   Visual Studio Code
+
 ## Projects
 **Graduation Project: Covid-19 Detection** [01/12/2021 – 15/05/2022]  
 Grade: A  

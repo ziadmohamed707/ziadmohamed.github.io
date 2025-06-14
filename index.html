@@ -84,6 +84,114 @@
             background-color: rgba(255, 255, 255, 0.2);
         }
 
+
+         /* Strengths Section */
+        .strengths-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 30px; /* Add some space below section title */
+        }
+
+        .strengths-list li {
+            margin-bottom: 18px;
+            font-size: 16px;
+            line-height: 1.7;
+            padding-left: 35px; /* Increased padding for icon */
+            position: relative;
+            color: var(--text-color); /* Ensure text color consistency */
+        }
+
+        .strengths-list li::before {
+            content: "\f00c"; /* FontAwesome check icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 7px; /* Fine-tune vertical alignment */
+            color: var(--secondary-color);
+            font-size: 18px; /* Slightly larger icon */
+        }
+
+        .strengths-list li strong {
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+
+        /* Tech Stack Section */
+        .tech-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px; /* Increased gap for better spacing */
+            margin-top: 30px; /* Add some space below section title */
+        }
+
+        .tech-category {
+            background-color: var(--light-color); /* If section bg is white, category cards are light */
+            padding: 25px;
+            border-radius: 10px; /* Slightly more rounded corners */
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        /* If the tech-stack section itself is light, make cards white */
+        /* This will be handled by alternating section background colors */
+        /* For example, if #tech-stack has background-color: white, then .tech-category should be var(--light-color) */
+        /* If #tech-stack has background-color: var(--light-color), then .tech-category should be white */
+        /* The current setup: Strengths (light), Tech Stack (white), so tech-category (light) is correct. */
+
+
+        .tech-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Enhanced hover shadow */
+        }
+
+        .tech-category h3 {
+            font-size: 20px;
+            color: var(--primary-color);
+            margin-bottom: 20px; /* Increased margin */
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+            /* display: inline-block; Removed to allow full width underline if desired, or keep for text-width */
+        }
+
+        .tech-category ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tech-category ul li {
+            margin-bottom: 12px; /* Increased spacing */
+            font-size: 15px;
+            padding-left: 28px; /* Increased padding for icon */
+            position: relative;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .tech-category ul li::before {
+            content: "\f0da"; /* FontAwesome chevron-right */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 5px; /* Fine-tune vertical alignment */
+            color: var(--primary-color);
+            font-size: 16px; /* Slightly larger icon */
+        }
+
+        .tech-category ul li strong {
+            font-weight: 600;
+            color: var(--dark-color); /* Or var(--primary-color) for emphasis */
+        }
+
+        /* Ensure section-specific background colors are applied if not done inline */
+        #strengths {
+            background-color: var(--light-color); /* Alternating with experience */
+        }
+
+        #tech-stack {
+            background-color: white; /* Alternating with strengths */
+        }
         /* Hero Section */
 
         .hero {
@@ -293,16 +401,16 @@
         }
 
         .project-image {
-            height: 800px;
+            height: 300px;
             overflow: hidden;
-            position: sticky;
+            position: relative;
             /* Added for overlay positioning */
         }
 
         .project-image img {
-            width: 100%;
+            width: 50%;
             height: 100%;
-            object-fit: fill;
+            object-fit: contain;
             /* Changed to cover for better fill */
             transition: var(--transition);
         }
@@ -336,6 +444,19 @@
 
         .project-card:hover .project-image-overlay {
             opacity: 1;
+             top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(44, 62, 80, 0.7); /* var(--dark-color) with alpha */
+            color: white;
+            display: flex;
+            flex-direction: column; /* To stack icon and text if added */
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+            pointer-events: none;
         }
 
         .project-info {
@@ -632,6 +753,8 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#experience">Experience</a></li>
+                   <li><a href="#strengths">Strengths</a></li>
+                    <li><a href="#tech-stack">Tech Stack</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#certificates">Certificates</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -644,7 +767,7 @@
     <section id="home" class="hero"
         style="display: flex; justify-content: center; align-items: center; padding: 100px 0;">
         <div class="container hero-image" style="display: flex; justify-content: center; align-items: center;">
-            <img src="images\profile\profile_image.jpg"
+            <img src="images\profile\profile_image.jpg" 
                 alt="Ziad Mohamed">
         </div>
         <div class="container hero-content" style="text-align: center; flex-direction: column; align-items: center;">
@@ -868,6 +991,117 @@
                         <a href="https://github.com/ziadmohamed707/Covid19Detection-App" target="_blank"><i
                                 class="fab fa-github"></i> GitHub</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strengths Section -->
+    <section id="strengths">
+        <div class="container section-title">
+            <h2>Key Strengths & Proficiencies</h2>
+        </div>
+        <div class="container">
+            <ul class="strengths-list">
+                <li><strong>Cross-Platform Mobile Development:</strong> Building high-performance, visually appealing applications for Android and iOS using Flutter and Dart.</li>
+                <li><strong>Native Android Expertise:</strong> Strong foundation in native Android development with Java and Kotlin, ensuring optimal device-specific performance and user experience.</li>
+                <li><strong>Full Lifecycle App Development:</strong> Experienced in all phases of mobile app development, from initial concept and requirement gathering through UI/UX design, development, testing, deployment, and post-launch maintenance.</li>
+                <li><strong>Backend Integration & BaaS:</strong> Skilled in integrating mobile applications with backend services, with strong proficiency in Firebase (Authentication, Firestore, Realtime Database, Cloud Functions).</li>
+                <li><strong>Advanced State Management:</strong> Expertise in implementing robust and scalable state management solutions in Flutter, primarily using BLoC and Cubit.</li>
+                <li><strong>API Development & Consumption:</strong> Proficient in designing, developing, and consuming RESTful APIs for seamless data exchange and third-party service integration.</li>
+                <li><strong>Device Connectivity:</strong> Proficient in integrating Bluetooth (Classic/BLE) for device-to-device communication and data exchange.</li>
+                <li><strong>Clean Code & Architectural Patterns:</strong> Committed to writing clean, well-documented, and maintainable code by applying established software design patterns (MVVM, MVC, MVP) and best practices.</li>
+                <li><strong>Version Control & Collaboration:</strong> Proficient in using Git and GitHub for efficient version control, branching strategies, and collaborative development in team environments.</li>
+                <li><strong>Agile Methodologies:</strong> Experienced in working within Agile (Scrum) development environments, contributing to iterative development cycles and continuous improvement.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="tech-stack">
+        <div class="container section-title">
+            <h2>Technologies & Tools</h2>
+        </div>
+        <div class="container">
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h3>Mobile Development</h3>
+                    <ul>
+                        <li><strong>Cross-Platform:</strong> Flutter, Dart</li>
+                        <li><strong>Native:</strong> Android (Java, Kotlin), Android SDK</li>
+                    </ul>
+                </div>
+                <div class="tech-category">
+                    <h3>Backend & Cloud Services</h3>
+                    <ul>
+                        <li>Firebase (Authentication, Firestore, Realtime Database, Cloud Functions, Firebase Hosting)</li>
+                    </ul>
+                </div>
+                <div class="tech-category">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>Dart</li>
+                        <li>Java</li>
+                        <li>Kotlin</li>
+                        <li>Python (for scripting, data analysis e.g., Pandas)</li>
+                        <li>MATLAB</li>
+                    </ul>
+                </div>
+                <div class="tech-category">
+                    <h3>Databases</h3>
+                    <ul>
+                        <li>SQLite</li>
+                        <li>MySQL</li>
+                        <li>Firebase Firestore / Realtime Database (as BaaS)</li>
+                    </ul>
+                </div>
+                 <div class="tech-category">
+                    <h3>Web Technologies</h3>
+                    <ul>
+                        <li>HTML5 (Basic Proficiency)</li>
+                        <li>CSS (Basic Proficiency)</li>
+                    </ul>
+                </div>
+                <div class="tech-category">
+                    <h3>Version Control</h3>
+                    <ul>
+                        <li>Git</li>
+                        <li>GitHub</li>
+                    </ul>
+                </div>
+                <div class="tech-category">
+                    <h3>Connectivity</h3>
+                    <ul>
+                        <li>Bluetooth (Classic, BLE)</li>
+                        <!-- Add other similar technologies like NFC, Wi-Fi Direct if applicable -->
+                    </ul>
+                </div>
+                <div class="tech-category">
+                    <h3>State Management (Flutter)</h3>
+                    <ul>
+                        <li>BLoC</li>
+                        <li>Cubit</li>
+                    </ul>
+                </div>
+                <div class="tech-category">
+                    <h3>Architectural & Design Patterns</h3>
+                    <ul>
+                        <li>MVVM, MVC, MVP</li>
+                        <li>Clean Architecture principles</li>
+                    </ul>
+                </div>
+                <div class="tech-category">
+                    <h3>Development Methodologies</h3>
+                    <ul>
+                        <li>Agile (Scrum)</li>
+                    </ul>
+                </div>
+                <div class="tech-category">
+                    <h3>Development Environments & Tools</h3>
+                    <ul>
+                        <li>Android Studio</li>
+                        <li>Visual Studio Code</li>
+                    </ul>
                 </div>
             </div>
         </div>
