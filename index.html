@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,12 +85,20 @@
         }
 
         /* Hero Section */
+
         .hero {
             display: flex;
             align-items: center;
             padding: 100px 0;
             background-color: var(--dark-color);
             color: white;
+        }
+
+        .hero .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
         }
 
         .hero-content {
@@ -284,19 +293,49 @@
         }
 
         .project-image {
-            height: 200px;
+            height: 800px;
             overflow: hidden;
+            position: sticky;
+            /* Added for overlay positioning */
         }
 
         .project-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: fill;
+            /* Changed to cover for better fill */
             transition: var(--transition);
         }
 
         .project-card:hover .project-image img {
             transform: scale(1.1);
+        }
+
+        .project-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(44, 62, 80, 0.7);
+            /* Using var(--dark-color) with alpha */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+            pointer-events: none;
+            /* Allows clicks to pass through if needed, though card isn't a link here */
+        }
+
+        .project-image-overlay i {
+            font-size: 48px;
+            /* Larger icon for impact */
+        }
+
+        .project-card:hover .project-image-overlay {
+            opacity: 1;
         }
 
         .project-info {
@@ -580,10 +619,12 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header>
-        <div class="container nav-container">
+        <div class="container nav-container"
+            style="display: flex; justify-content: space-between; align-items: center;">
             <div class="logo">Ziad<span>M</span></div>
             <nav>
                 <ul>
@@ -600,14 +641,16 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container hero-content">
-            <h1>Hello, I'm Ziad Mohamed</h1>
+    <section id="home" class="hero"
+        style="display: flex; justify-content: center; align-items: center; padding: 100px 0;">
+        <div class="container hero-image" style="display: flex; justify-content: center; align-items: center;">
+            <img src="https://github.com/ziadmohamed707/ziadmohamed.github.io/blob/main/image.jpg?raw=true"
+                alt="Ziad Mohamed">
+        </div>
+        <div class="container hero-content" style="text-align: center; flex-direction: column; align-items: center;">
+            <h1>Hello, I'm Ziad Mohamed </h1>
             <p>A passionate mobile developer proficient in Flutter and Android development.</p>
             <a href="#projects" class="hero-btn">View My Projects</a>
-        </div>
-        <div class="container hero-image">
-            <img src="https://github.com/ziadmohamed707/ziadmohamed.github.io/blob/main/image.jpg?raw=true/300" alt="Ziad Mohamed">
         </div>
     </section>
 
@@ -618,7 +661,11 @@
         </div>
         <div class="container about-content">
             <div class="about-text">
-                <p>I am a computer science graduate with over one year of experience as a native android mobile developer. Currently, I am focused on Flutter app development, leveraging my expertise to create cross-platform mobile applications. My background in android development provides a strong foundation in mobile technologies, and my transition to flutter reflects my commitment to staying at the forefront of mobile app innovation.</p>
+                <p>I am a computer science graduate with over one year of experience as a native android mobile
+                    developer. Currently, I am focused on Flutter app development, leveraging my expertise to create
+                    cross-platform mobile applications. My background in android development provides a strong
+                    foundation in mobile technologies, and my transition to flutter reflects my commitment to staying at
+                    the forefront of mobile app innovation.</p>
                 <div class="skills">
                     <h4>Skills</h4>
                     <div class="skill-item">
@@ -685,7 +732,8 @@
                 <div class="timeline-item">
                     <div class="date">2022 - Current</div>
                     <h3>Flutter Developer Freelancer</h3>
-                    <p>Developed and deployed cross-platform mobile applications using Flutter. Collaborated with clients to gather requirements and deliver custom mobile solutions.</p>
+                    <p>Developed and deployed cross-platform mobile applications using Flutter. Collaborated with
+                        clients to gather requirements and deliver custom mobile solutions.</p>
                 </div>
                 <div class="timeline-item">
                     <div class="date">2021 - 2022</div>
@@ -702,39 +750,123 @@
             <h2>Projects</h2>
         </div>
         <div class="container project-grid">
+
             <div class="project-card">
                 <div class="project-image">
-                    <img src="https://via.placeholder.com/350" alt="Covid-19 Detection">
+                    <!-- TODO: Replace with your actual project image for Erkenly -->
+                    <img src="images\projects\smart_watch\Loginsplash.png" alt="Lifeplus">
                 </div>
                 <div class="project-info">
-                    <h3>Covid-19 Detection</h3>
-                    <p>A mobile application for enhancing respiratory health diagnostics using Flutter.</p>
+                    <h3>Lifeplus</h3>
+                    <p>This system is designed to continuously track key physiological parameters of individuals, such
+                        as heart rate, blood oxygen level (SPO2), and temperature. It aims to provide real-time health
+                        monitoring, especially for those with chronic diseases who require constant care..</p>
+                    <div class="project-media" style="margin-top: 15px; margin-bottom: 15px;">
+                        <!-- Add video if available. Replace 'your_scholar_chat_video.mp4' -->
+                        <!-- This video should be in 'images/projects/chat_app/' -->
+                        <h4>Additional Screenshots:</h4>
+                        <!-- Replace 'your_image_filename.jpg' with the actual name of your image file -->
+                        <!-- Ensure 'your_image_filename.jpg' is inside the 'images/projects/chat_app/' folder -->
+                        <img src="images/projects/smart_watch/Login-4.png"
+                            style="max-width: 100px; margin: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                        <img src="images/projects/smart_watch/Login.png"
+                            style="max-width: 100px; margin: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                        <img src="images/projects/smart_watch/Login-1.png"
+                            style="max-width: 100px; margin: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                        <img src="images/projects/smart_watch/Login-2.png"
+                            style="max-width: 100px; margin: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                        <img src="images/projects/smart_watch/Login-3.png"
+                            style="max-width: 100px; margin: 5px; border: 1px solid #ddd; border-radius: 4px;">
+
+
+                    </div>
                     <div class="project-links">
-                        <a href="https://github.com/your-repo/Covid19Detection-App" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/ziadmohamed707/Smart-Watch-Diseases-System.git" target="_blank"><i
+                                class="fab fa-github"></i> GitHub</a>
                     </div>
                 </div>
             </div>
             <div class="project-card">
                 <div class="project-image">
-                    <img src="https://via.placeholder.com/350" alt="Erkenly">
-                </div>
-                <div class="project-info">
-                    <h3>Erkenly</h3>
-                    <p>A Parking Tracker application that helps find available parking spots in real-time.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/your-repo/Erkenly" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <!-- Replace 'your_main_scholar_chat_image.png' with an actual image file name -->
+                    <!-- This image should be in 'images/projects/chat_app/' -->
+                    <img src="images/projects/chat_app/image1.png" alt="Scholar Chat Main Preview">
+                    <div class="project-image-overlay">
+                        <i class="fas fa-eye"></i>
                     </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="https://via.placeholder.com/350" alt="Scholar Chat">
                 </div>
                 <div class="project-info">
                     <h3>Scholar Chat</h3>
                     <p>A chat application designed for academic communication between students and teachers.</p>
+
+                    <div class="project-media" style="margin-top: 15px; margin-bottom: 15px;">
+                        <!-- Add video if available. Replace 'your_scholar_chat_video.mp4' -->
+                        <!-- This video should be in 'images/projects/chat_app/' -->
+                        <h4>Additional Screenshots:</h4>
+                        <!-- Replace 'your_image_filename.jpg' with the actual name of your image file -->
+                        <!-- Ensure 'your_image_filename.jpg' is inside the 'images/projects/chat_app/' folder -->
+                        <img src="images/projects/chat_app/image1.png" alt="Scholar Chat - Feature Screenshot"
+                            style="max-width: 100px; margin: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                        <img src="images/projects/chat_app/Screenshot_1749900782.png"
+                            alt="Scholar Chat - Feature Screenshot"
+                            style="max-width: 100px; margin: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                        <img src="images/projects/chat_app/Screenshot_1749900832.png"
+                            alt="Scholar Chat - Feature Screenshot"
+                            style="max-width: 100px; margin: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                        <img src="images/projects/chat_app/Screenshot_1749900842.png"
+                            alt="Scholar Chat - Feature Screenshot"
+                            style="max-width: 100px; margin: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                        <h4>Demo Video:</h4>
+                        <video width="100%" controls style="margin-bottom: 10px; background-color: #000;">
+                            <source src="images\projects\chat_app\402262080-3029916f-f92f-4c2f-ad10-154bd6429039.mp4"
+                                type="video/mp4">
+                            Your browser does not support the video tag. If you don't have a video for this project, you
+                            can remove this &lt;video&gt; section.
+                        </video>
+                        <p><em>You can add more images here. For many images, consider a small gallery or carousel.</em>
+                        </p>
+                    </div>
+
                     <div class="project-links">
-                        <a href="https://github.com/your-repo/ScholarChat" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/ziadmohamed707/ScholarChat" target="_blank"><i
+                                class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <!-- TODO: Replace with your actual project image for Covid-19 Detection -->
+                    <img src="images/projects/ecommerce/login.png" alt="MedLife">
+                </div>
+                <div class="project-info">
+                    <h3>MedLife</h3>
+                    <p>An e-commerce application designed for medical products, allowing users to browse and purchase
+                        items online.</p>
+                    <h4>Additional Screenshots:</h4>
+                    <!-- Replace 'your_image_filename.jpg' with the actual name of your image file -->
+                    <!-- Ensure 'your_image_filename.jpg' is inside the 'images/projects/chat_app/' folder -->
+                    <img src="images/projects/ecommerce/login (1).png" alt="Scholar Chat - Feature Screenshot"
+                        style="max-width: 100px; margin: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                    <img src="images/projects/ecommerce/home.png" alt="Scholar Chat - Feature Screenshot"
+                        style="max-width: 100px; margin: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                    <img src="images/projects/ecommerce/home (1).png" alt="Scholar Chat - Feature Screenshot"
+                        style="max-width: 100px; margin: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                    <img src="images/projects/ecommerce/home (2).png" alt="Scholar Chat - Feature Screenshot"
+                        style="max-width: 100px; margin: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                    <img src="images/projects/ecommerce/cart.png" alt="Scholar Chat - Feature Screenshot"
+                        style="max-width: 100px; margin: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                    <img src="images/projects/ecommerce/code for verification.png"
+                        alt="Scholar Chat - Feature Screenshot"
+                        style="max-width: 100px; margin: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                    <img src="images/projects/ecommerce/reset password.png" alt="Scholar Chat - Feature Screenshot"
+                        style="max-width: 100px; margin: 5px; border: 1px solid #ddd; border-radius: 4px;">
+
+
+                    <div class="project-links">
+                        <a href="https://github.com/ziadmohamed707/Covid19Detection-App" target="_blank"><i
+                                class="fab fa-github"></i> GitHub</a>
                     </div>
                 </div>
             </div>
@@ -772,11 +904,13 @@
         </div>
         <div class="container contact-content">
             <div class="contact-info">
-                <p><i class="fas fa-envelope"></i>Email: <a href="mailto:Ziadm707.zm@gmail.com">Ziadm707.zm@gmail.com</a></p>
+                <p><i class="fas fa-envelope"></i>Email: <a
+                        href="mailto:Ziadm707.zm@gmail.com">Ziadm707.zm@gmail.com</a></p>
                 <p><i class="fas fa-phone"></i>Phone: +02 01024375442</p>
                 <div class="social-links">
                     <a href="https://github.com/ziadmohamed707" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/ziad-mohamed-7a5b841a1/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/ziad-mohamed-7a5b841a1/" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
                 </div>
             </div>
             <div class="contact-form">
@@ -806,4 +940,5 @@
         </div>
     </footer>
 </body>
+
 </html>
